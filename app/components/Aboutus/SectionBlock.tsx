@@ -26,7 +26,7 @@ const SectionBlock: React.FC<SectionBlockProps> = ({ title, data }) => {
   return (
     <div className="my-16">
       <div className="flex justify-between items-center">
-        <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+        <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-center">
           <span className="text-black">Web </span><span className="text-blue">{title}</span>
         </h3>
         {/* <button
@@ -54,14 +54,14 @@ const SectionBlock: React.FC<SectionBlockProps> = ({ title, data }) => {
           alt={item.heading}
           width={100}
           height={100}
-          className="mb-4"
+          className="mb-4 object-contain h-[112px]"
         />
         <p className="text-gray-600 text-base ">{item.paragraph}</p>
       </div>
 
       {/* Optional link */}
        <Link
-        href=""
+        href="#contact-section"
         className="text-blue mt-4 text-sm font-medium flex items-center gap-1 absolute bottom-[27px]"
       >
         {item.link}
@@ -85,7 +85,7 @@ const SectionBlock: React.FC<SectionBlockProps> = ({ title, data }) => {
       )}
       </div>
           <Link
-        href=""
+        href="#contact-section"
         className="text-blue mt-4 text-sm font-medium flex items-center gap-1 absolute bottom-[27px]"
       >
         {item.link}

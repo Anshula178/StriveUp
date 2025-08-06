@@ -14,7 +14,91 @@ interface ServiceItem {
 }
 
 const services: Record<string, ServiceItem[]> = {
-  "Web Design": [
+   "Development": [
+    {
+      heading: "PHP Development",
+      imgSrc: "/images/aboutus/php.png",
+      paragraph: "StriveUp’s PHP developers build robust backend solutions for every business need.",
+      link: "Start a Project",
+      bullets: [
+        "Robust backend architecture with PHP",
+        "Custom CMS and web application solutions",
+        "Framework expertise in Laravel & CodeIgniter",
+        "Fast turnaround with clean, secure code",
+        "Database integration and REST API support",
+      ],
+    },
+    {
+      heading: "ASP.NET Development",
+      imgSrc: "/images/aboutus/dotnet.png",
+      paragraph: "ASP.NET developers at StriveUp create enterprise-grade and scalable applications.",
+      link: "Start a Project",
+      bullets: [
+        "Enterprise web apps with C# and .NET Core",
+        "Integration with SharePoint, Dynamics, and CRM",
+        "Secure, scalable, and high-performance builds",
+        "Custom workflows and dashboard modules",
+        "Maintenance and long-term support available",
+      ],
+    },
+    {
+  heading: "MERN / MEAN Stack ",
+  imgSrc: "/images/aboutus/mean-mern.png",
+  paragraph: "Build scalable and dynamic full-stack web apps using the power of JavaScript with MERN or MEAN architecture.",
+  link: "Start a Project",
+  bullets: [
+    "Frontend with React (MERN) or Angular (MEAN)",
+    "Robust REST APIs using Express.js and Node.js",
+    "Flexible NoSQL database with MongoDB",
+    "Reusable components and modular architecture",
+    "Ideal for SaaS, dashboards, and enterprise tools",
+  ],
+},
+{
+  heading: "WordPress Development",
+  imgSrc: "/images/aboutus/wordpress.png",
+  paragraph: "We create scalable, custom WordPress sites tailored to your needs.",
+  link: "Start a Project",
+  bullets: [
+    "Custom themes and plugin development",
+    "Elementor, Gutenberg, or classic editor support",
+    "WooCommerce setup and integration",
+    "SEO optimization and page speed tuning",
+    "Easy content management for non-tech users",
+  ],
+},
+{
+  heading: "Mobile App Development",
+  imgSrc: "/images/aboutus/ios.png",
+  paragraph: "Crafting intuitive and high-performance mobile apps for iOS, Android, and cross-platform solutions.",
+  link: "Start a Project",
+  bullets: [
+    "Native iOS (Swift) and Android (Kotlin) development",
+    "Cross-platform with Flutter or React Native",
+    "Custom UI/UX tailored for mobile experiences",
+    "API integration and secure backend connectivity",
+    "App Store & Google Play deployment and support",
+  ],
+},
+{
+  heading: "Webflow Development",
+  imgSrc: "/images/aboutus/webflow.png",
+  paragraph: "Craft visually stunning, responsive websites in Webflow — with powerful CMS and seamless animations built in.",
+  link: "Start a Project",
+  bullets: [
+    "Custom Webflow builds tailored to your brand",
+    "Advanced CMS configurations for dynamic content",
+    "Pixel-perfect implementation from Figma to Webflow",
+    "Smooth animations and interactions without code",
+    "SEO-friendly, fast, and scalable Webflow sites",
+  ],
+}
+
+
+
+
+  ],
+  "Design": [
     {
       heading: "Parallax Web Design",
       imgSrc: "/images/aboutus/parallax.png",
@@ -56,7 +140,7 @@ const services: Record<string, ServiceItem[]> = {
     },
     {
   heading: "UI/UX Design",
-  imgSrc: "/images/aboutus/uiux.png",
+  imgSrc: "/images/aboutus/ui-ux.png",
   paragraph: "We craft user experiences that convert and interfaces that engage.",
   link: "Start a Project",
   bullets: [
@@ -82,7 +166,7 @@ const services: Record<string, ServiceItem[]> = {
 },
 {
   heading: "eCommerce Design",
-  imgSrc: "/images/aboutus/ecommerce.png",
+  imgSrc: "/images/aboutus/ecom.png",
   paragraph: "Modern and intuitive designs tailored for online shopping experiences.",
   link: "Start a Project",
   bullets: [
@@ -95,100 +179,18 @@ const services: Record<string, ServiceItem[]> = {
 },
 
   ],
-  "Web Development": [
-    {
-      heading: "PHP Development",
-      imgSrc: "/images/aboutus/php.png",
-      paragraph: "StriveUp’s PHP developers build robust backend solutions for every business need.",
-      link: "Start a Project",
-      bullets: [
-        "Robust backend architecture with PHP",
-        "Custom CMS and web application solutions",
-        "Framework expertise in Laravel & CodeIgniter",
-        "Fast turnaround with clean, secure code",
-        "Database integration and REST API support",
-      ],
-    },
-    {
-      heading: "ASP.NET Development",
-      imgSrc: "/images/aboutus/code.png",
-      paragraph: "ASP.NET developers at StriveUp create enterprise-grade and scalable applications.",
-      link: "Start a Project",
-      bullets: [
-        "Enterprise web apps with C# and .NET Core",
-        "Integration with SharePoint, Dynamics, and CRM",
-        "Secure, scalable, and high-performance builds",
-        "Custom workflows and dashboard modules",
-        "Maintenance and long-term support available",
-      ],
-    },
-    {
-  heading: "MERN / MEAN Stack ",
-  imgSrc: "/images/aboutus/mern-mean.png",
-  paragraph: "Build scalable and dynamic full-stack web apps using the power of JavaScript with MERN or MEAN architecture.",
-  link: "Start a Project",
-  bullets: [
-    "Frontend with React (MERN) or Angular (MEAN)",
-    "Robust REST APIs using Express.js and Node.js",
-    "Flexible NoSQL database with MongoDB",
-    "Reusable components and modular architecture",
-    "Ideal for SaaS, dashboards, and enterprise tools",
-  ],
-},
-{
-  heading: "WordPress Development",
-  imgSrc: "/images/aboutus/wordpress.png",
-  paragraph: "We create scalable, custom WordPress sites tailored to your needs.",
-  link: "Start a Project",
-  bullets: [
-    "Custom themes and plugin development",
-    "Elementor, Gutenberg, or classic editor support",
-    "WooCommerce setup and integration",
-    "SEO optimization and page speed tuning",
-    "Easy content management for non-tech users",
-  ],
-},
-{
-  heading: "Mobile App Development",
-  imgSrc: "/images/aboutus/app-development.png",
-  paragraph: "Crafting intuitive and high-performance mobile apps for iOS, Android, and cross-platform solutions.",
-  link: "Start a Project",
-  bullets: [
-    "Native iOS (Swift) and Android (Kotlin) development",
-    "Cross-platform with Flutter or React Native",
-    "Custom UI/UX tailored for mobile experiences",
-    "API integration and secure backend connectivity",
-    "App Store & Google Play deployment and support",
-  ],
-},
-{
-  heading: "CMS Development",
-  imgSrc: "/images/aboutus/cms-development.png",
-  paragraph: "Build powerful, easy-to-manage CMS platforms to control your content with full flexibility.",
-  link: "Start a Project",
-  bullets: [
-    "Custom CMS solutions tailored to business needs",
-    "Expertise in WordPress, Webflow, Strapi, and headless CMS",
-    "User-friendly admin panels with role management",
-    "Content modeling and structured data design",
-    "SEO-optimized, fast-loading, and scalable builds",
-  ],
-}
-
-
-
-  ],
+ 
 };
 
 
 
 const Aboutus = () => {
-  const categories = Object.keys(services);
-  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  // const categories = Object.keys(services);
+  // const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   return (
-    <div id="service-section">
-      <div className="mx-auto max-w-7xl px-4 py-24  lg:px-10 bg-lightgrey rounded-3xl relative">
+  <div id="service-section">
+      <div className="mx-auto max-w-7xl px-4 py-24 lg:px-10 bg-lightgrey rounded-3xl relative">
         <Image
           src="/images/aboutus/dots.svg"
           width={100}
@@ -202,28 +204,17 @@ const Aboutus = () => {
           From UX to code, we create solutions that transform brands
         </h4>
 
-        {/* Tabs for filters */}
-        <div className="flex justify-center space-x-4 mt-10">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-5 py-2 rounded-full border text-sm font-bold transition-all ${
-                selectedCategory === category
-                  ? "bg-blue text-white border-blue"
-                  : "border-gray-400 text-gray-700 hover:border-blue hover:text-blue"
-              }`}
-            >
-              {category}
-            </button>
+        {/* Show all service blocks without filtering */}
+        <div className="space-y-16 mt-16">
+          {Object.entries(services).map(([category, data]) => (
+            <SectionBlock key={category} title={category} data={data} />
           ))}
         </div>
-
-        {/* Dynamic Service Section */}
-        <SectionBlock title={selectedCategory.split(" ")[1] || selectedCategory} data={services[selectedCategory]} />
       </div>
     </div>
   );
 };
+
+  
 
 export default Aboutus;

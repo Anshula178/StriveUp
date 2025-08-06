@@ -32,7 +32,7 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
 
                         <div className="flex flex-shrink-0 items-center border-right">
                             <Link href="/" className='text-2xl font-semibold text-black'>
-                                Desgy Solutions
+                                <img className='w-56 h-auto' src="\images\banner\logo-v1.png" alt="" />
                             </Link>
                         </div>
 

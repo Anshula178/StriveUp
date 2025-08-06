@@ -31,7 +31,6 @@ export default function Home() {
       <FAQ />
       <Testimonials />
       <Articles />
-      <Joinus />
       <Insta />
     </main>
   )

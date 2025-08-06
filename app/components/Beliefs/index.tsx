@@ -6,7 +6,7 @@ const Beliefs = () => {
 
                 {/* COLUMN-1 */}
 
-                <div className="bg-darkblue bg-beliefs pt-12 px-10 sm:px-24 pb-52 md:pb-70 rounded-3xl">
+                <div className="bg-darkblue  pt-12 px-10 sm:px-24 pb-40  rounded-3xl">
                     <h2 className="text-lg font-normal text-white tracking-widest mb-5 text-center sm:text-start">BELIEFS</h2>
                     <h3 className="text-4xl sm:text-65xl font-bold text-white leading-snug mb-5 text-center sm:text-start">Integrity <span className="text-grey">and hard work define our core values.</span></h3>
                     <h5 className="text-offwhite pt-2 mb-5 text-center sm:text-start">We believe in building trust through transparent processes and a relentless commitment to quality.</h5>
@@ -17,7 +17,7 @@ const Beliefs = () => {
 
                 {/* COLUMN-2 */}
 
-                <div className="bg-build pt-12 px-10 sm:px-24 pb-52 md:pb-70 rounded-3xl">
+                <div className="bg-[#D6FFEB] pt-12 px-10 sm:px-24 pb-40 rounded-3xl">
                     <h2 className="text-lg font-normal text-blue tracking-widest mb-5 text-center sm:text-start">BUILD</h2>
                     <h3 className="text-4xl sm:text-65xl font-bold text-black leading-snug mb-5 text-center sm:text-start"><span className="text-blue">Passion </span>and purpose drive every creation.</h3>
                     <h5 className="bluish pt-2 mb-5 text-center sm:text-start">From concept to creation, we turn bold ideas into digital experiences that make an impact.</h5>

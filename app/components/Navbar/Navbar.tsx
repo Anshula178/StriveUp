@@ -19,6 +19,7 @@ const navigation: NavigationItem[] = [
     { name: 'FAQ', href: '#faq-section', current: false },
     { name: 'Blog', href: '#blog-section', current: false },
     { name: 'Testimonial', href: '#testimonial-section', current: false },
+   
 ]
 
 function classNames(...classes: string[]) {
@@ -55,7 +56,7 @@ const Navbar = () => {
                                             href={item.href}
                                             className={classNames(
                                                 item.current ? 'bg-gray-900' : 'navlinks hover:text-black',
-                                                'px-3 py-4 rounded-md text-[18px] font-normal'
+                                                'px-3 py-4 rounded-md text-[18px] font-semibold'
                                             )}
                                             aria-current={item.href ? 'page' : undefined}
                                         >

@@ -132,10 +132,11 @@ html {
   background-position: unset;
 }
 .bg-inovation{
-  background-image: url('/images/digital/Inovation.jpg');
+  background-image: url('/images/digital/bg-inovation.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: unset;
+  
 }
 
 .girldoodle {

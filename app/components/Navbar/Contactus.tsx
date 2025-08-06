@@ -52,7 +52,7 @@ const Contactusform = () => {
 
   return (
     <>
-      <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
+      <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0" >
         <div className="hidden lg:block">
           <button
             type="button"
@@ -89,7 +89,7 @@ const Contactusform = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all z-30">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all z-30" id="contact-section">
                   <div className="py-8 lg:py-8 px-4 mx-auto max-w-screen-md">
                     <div className="flex flex-shrink-0 items-center justify-center">
                       <Link

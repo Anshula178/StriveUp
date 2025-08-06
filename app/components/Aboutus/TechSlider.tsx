@@ -59,7 +59,7 @@ export default function TechSlider() {
         loop={true}
         autoplay={{ delay: 2000, disableOnInteraction: true }}
         spaceBetween={20}
-        slidesPerView={2}
+        slidesPerView={3}
         breakpoints={{
           640: { slidesPerView: 3 },
           768: { slidesPerView: 4 },
