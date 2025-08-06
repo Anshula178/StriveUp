@@ -26,7 +26,7 @@ const InteractiveBackground: React.FC = () => {
   const nodesRef = useRef<Node[]>([]);
   const animationRef = useRef<number>();
 
-  const PRIMARY_COLOR = "#136CE3";
+  const PRIMARY_COLOR = "#0066FF"; // updated color
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -91,16 +91,14 @@ const InteractiveBackground: React.FC = () => {
     canvas.addEventListener("click", handleClick);
 
     const animate = () => {
-      // Fill with white background for reset
-      ctx.fillStyle = "#F4F5F6";
+      ctx.fillStyle = "#E8EFFF"; // updated background
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       const nodes = nodesRef.current;
 
-      // Node connections
+      // Draw lines between nodes
       for (let i = 0; i < nodes.length; i++) {
         const a = nodes[i];
-
         for (let j = i + 1; j < nodes.length; j++) {
           const b = nodes[j];
           const dx = a.x - b.x;
@@ -109,7 +107,7 @@ const InteractiveBackground: React.FC = () => {
 
           if (dist < 120) {
             const alpha = 1 - dist / 120;
-            ctx.strokeStyle = `rgba(19, 108, 227, ${alpha * 0.25})`;
+            ctx.strokeStyle = `rgba(0, 102, 255, ${alpha * 0.25})`; // #0066FF
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -119,7 +117,7 @@ const InteractiveBackground: React.FC = () => {
         }
       }
 
-      // Nodes
+      // Draw and move nodes
       nodes.forEach((node) => {
         node.x += node.vx;
         node.y += node.vy;
@@ -136,7 +134,7 @@ const InteractiveBackground: React.FC = () => {
         ctx.shadowBlur = 0;
       });
 
-      // Particles
+      // Draw particles
       particlesRef.current = particlesRef.current.filter((p) => {
         p.x += p.vx;
         p.y += p.vy;
@@ -147,7 +145,7 @@ const InteractiveBackground: React.FC = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(19, 108, 227, ${alpha})`;
+        ctx.fillStyle = `rgba(0, 102, 255, ${alpha})`;
         ctx.shadowColor = PRIMARY_COLOR;
         ctx.shadowBlur = 15 * alpha;
         ctx.fill();
@@ -156,7 +154,7 @@ const InteractiveBackground: React.FC = () => {
         return p.life > 0;
       });
 
-      // Lines to mouse
+      // Line to mouse
       nodes.forEach((node) => {
         const dx = mouseRef.current.x - node.x;
         const dy = mouseRef.current.y - node.y;
@@ -164,7 +162,7 @@ const InteractiveBackground: React.FC = () => {
 
         if (dist < 150) {
           const alpha = 1 - dist / 150;
-          ctx.strokeStyle = `rgba(19, 108, 227, ${alpha * 0.4})`;
+          ctx.strokeStyle = `rgba(0, 102, 255, ${alpha * 0.4})`;
           ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.moveTo(node.x, node.y);
@@ -190,9 +188,7 @@ const InteractiveBackground: React.FC = () => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full z-[-1]"
-      style={{
-        background: "#F4F5F6",
-      }}
+      style={{ background: "#E8EFFF" }} // visible fallback
     />
   );
 };
