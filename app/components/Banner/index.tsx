@@ -5,9 +5,7 @@ const Banner = () => {
     return (
         <div className="relative  overflow-hidden">
             {/* Background Animation */}
-            <div className="absolute inset-0 -z-10">
-                <InteractiveBackground />
-            </div>
+            
 
             {/* Foreground Content */}
             <div className='mx-auto max-w-7xl sm:py-10 px-6 lg:px-8 relative z-10'>
@@ -27,7 +25,7 @@ const Banner = () => {
                         </div>
                         <div className='my-7 text-center lg:text-start'>
                             <button className='text-sm md:text-xl font-semibold hover:shadow-xl bg-blue text-white py-3 px-6 md:py-5 md:px-14 rounded-full hover:bg-hoblue'>
-                                Get Started
+                                Hire Us
                             </button>
                         </div>
                     </div>
