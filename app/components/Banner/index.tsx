@@ -1,9 +1,9 @@
 import Image from "next/image";
-import InteractiveBackground from "./InteractiveBackground";
+
 
 const Banner = () => {
     return (
-        <div className="relative  overflow-hidden">
+        <div className="relative bg-[#E8EFFF]  overflow-hidden">
             {/* Background Animation */}
             
 
