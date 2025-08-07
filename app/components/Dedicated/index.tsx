@@ -49,8 +49,8 @@ const Dedicated = () => {
           {[
             { k: "50+", v: "Projects" },
             { k: "10+", v: "Experience" },
-            { k: "92%", v: "Retention" },
-            { k: "5", v: "Continents" },
+            { k: "100%", v: "Retention" },
+            { k: "10+", v: "Continents" },
           ].map((stat) => (
             <div key={stat.k}>
               <div className="text-4xl mb-3 font-bold text-gray-900">{stat.k}</div>
