@@ -53,10 +53,10 @@ const Contactusform = () => {
   return (
     <>
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0" >
-        <div className="hidden lg:block">
+        <div className="block">
           <button
             type="button"
-            className="justify-end text-xl font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-btnblue  hover:text-white"
+            className="justify-end text-base md:text-xl font-semibold bg-transparent  px-4 py-2 md:py-4 md:px-6 lg:px-12 navbutton rounded-full hover:bg-btnblue  hover:text-white"
             onClick={openModal}
           >
             Contact Us
@@ -89,7 +89,7 @@ const Contactusform = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all z-30" id="contact-section">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all z-50" id="contact-section">
                   <div className="py-8 lg:py-8 px-4 mx-auto max-w-screen-md">
                     <div className="flex flex-shrink-0 items-center justify-center">
                       <Link

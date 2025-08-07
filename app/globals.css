@@ -208,6 +208,15 @@ html {
     background-position: 55%, 92% 40%, 11% 10%;
 }
 
+
+@media (max-width: 768px) {
+  .bg-testimonial {
+    background-image: url('/images/wework/elipse.svg');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: 55%, 92% 40%, 11% 10%;
+  }
+}
+
 @media only screen and (max-width: 1400px) {
   .bg-testimonial {
     background-position: 80%, top right, top left;

@@ -42,7 +42,7 @@ const Navbar = () => {
                             <div className="flex flex-shrink-0 items-center ">
                                 <Link href="/" className='text-2xl sm:text-4xl font-semibold text-black'>
                                     {/* Strive<span className='text-blue'>Up</span>  */}
-                                    <img className='w-56 h-auto' src="\images\banner\logo-v1.png" alt="" />
+                                    <img className=' w-36 md:w-56 h-auto' src="\images\banner\logo-v1.png" alt="" />
                                 </Link>
                             </div>
 
@@ -66,8 +66,10 @@ const Navbar = () => {
                                 </div>
 
                             </div>
+                             <div className='hidden lg:block '>
                             {/* <button className='hidden lg:flex justify-end text-xl font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white'>Contact us</button> */}
                             <Contactusform />
+                            </div>
                         </div>
 
 
@@ -76,7 +78,7 @@ const Navbar = () => {
                         {/* DRAWER ICON */}
 
                         <div className='block lg:hidden'>
-                            <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
+                            <Bars3Icon className="block h-9 w-10" aria-hidden="true" onClick={() => setIsOpen(true)} />
                         </div>
 
                         {/* DRAWER LINKS DATA */}

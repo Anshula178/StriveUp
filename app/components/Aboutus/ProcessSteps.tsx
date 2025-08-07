@@ -126,7 +126,7 @@ export default function ProcessSteps() {
                   viewport={{ once: true, margin: '-100px' }}
                   className={`relative flex items-center ${isEven ? 'justify-start' : 'justify-end'}`}
                 >
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
+                  <div className=" hidden md:block absolute left-1/2 transform -translate-x-1/2 z-20">
                     <motion.div
                       className="w-16 h-16 rounded-full shadow-2xl flex items-center justify-center border-4 border-white"
                       style={{ backgroundColor: step.color }}
@@ -154,9 +154,9 @@ export default function ProcessSteps() {
                         Step {step.number}
                       </div>
 
-                      <h3 className="text-2xl font-bold mb-3" style={{ color: '#1f2937' }}>{step.title}</h3>
+                      <h3 className=" text-xl md:text-2xl font-bold mb-3" style={{ color: '#1f2937' }}>{step.title}</h3>
 
-                      <p className="leading-relaxed text-base" style={{ color: '#4b5563' }}>{step.description}</p>
+                      <p className=" text-sm leading-relaxed md:text-base" style={{ color: '#4b5563' }}>{step.description}</p>
 
                       <div className="mt-6 h-1 w-16 rounded-full" style={{ backgroundColor: step.color }} />
                     </div>

@@ -115,8 +115,8 @@ export default class MultipleItems extends Component {
 
                     <div className="text-center">
                         <h3 className="text-4xl sm:text-6xl font-bold text-black my-3">See what others are saying.</h3>
-                        <h3 className="text-4xl sm:text-6xl font-bold text-black text-opacity-50 lg:mr-48 my-4">See what others are saying.</h3>
-                        <h3 className="text-4xl sm:text-6xl font-bold text-black text-opacity-25 lg:-mr-32 my-4">See what others are saying.</h3>
+                        <h3 className="hidden md:block text-4xl sm:text-6xl font-bold text-black text-opacity-50 lg:mr-48 my-4">See what others are saying.</h3>
+                        <h3 className="hidden md:block text-4xl sm:text-6xl font-bold text-black text-opacity-25 lg:-mr-32 my-4">See what others are saying.</h3>
                     </div>
 
 

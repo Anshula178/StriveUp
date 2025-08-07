@@ -2,7 +2,7 @@ const Digital = () => {
   return (
     <div className="mx-2 relative">
     
-      <div className="mx-auto max-w-7xl px-4 my-40   lg:px-8 bg-digital bg-inovation rounded-3xl relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 my-40   lg:px-8  bg-inovation rounded-3xl relative overflow-hidden">
         
        
         <div className="absolute inset-0 bg-black/50 z-0 rounded-3xl " />
@@ -10,11 +10,11 @@ const Digital = () => {
        
         <div className="relative z-10  my-16">
       
-          <div className="p-16 max-w-3xl   text-white">
-            <h3 className="text-lg font-normal mb-5 tracking-widest text-center lg:text-start">
+          <div className=" p-6 md:p-16 max-w-3xl   text-white">
+            <h3 className=" text-md md:text-lg font-normal mb-5 tracking-widest text-center lg:text-start">
               WHO WE ARE
             </h3>
-            <h4 className="text-4xl sm:text-7xl font-bold mb-8 leading-snug text-center lg:text-start">
+            <h4 className=" text-3xl sm:text-7xl font-bold mb-8 leading-snug text-center lg:text-start">
               We craft innovative digital
               <br />
               solutions that drive success.
