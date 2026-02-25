@@ -14,14 +14,14 @@ export function CTA() {
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent/20 rounded-full blur-[100px]" />
 
       <Container className="relative z-10">
-        <div className="bg-card border border-white/10 rounded-3xl p-8 md:p-16 text-center max-w-5xl mx-auto shadow-2xl">
+        <div className="bg-card border border-border rounded-3xl p-8 md:p-16 text-center max-w-5xl mx-auto shadow-2xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="font-heading text-4xl md:text-6xl font-bold text-white mb-6">
+            <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground mb-6">
               Ready to Scale Your Business?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
@@ -34,8 +34,8 @@ export function CTA() {
                   Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10" asChild>
-                <Link href="/portfolio">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10 border-border hover:bg-foreground/5" asChild>
+                <Link href="/work">
                   View Case Studies
                 </Link>
               </Button>

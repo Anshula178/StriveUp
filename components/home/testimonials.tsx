@@ -27,10 +27,10 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <Section className="bg-secondary/10 border-t border-white/5">
+    <Section className="bg-secondary/10 border-t border-border">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
             Trusted by Industry Leaders
           </h2>
         </div>
@@ -43,7 +43,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card border border-white/5 p-8 rounded-2xl relative"
+              className="bg-card border border-border p-8 rounded-2xl relative"
             >
               <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/20" />
               <p className="text-muted-foreground text-lg italic mb-6 relative z-10 pt-8">
@@ -54,7 +54,7 @@ export function Testimonials() {
                   {testimonial.author[0]}
                 </div>
                 <div>
-                  <div className="font-bold text-white">{testimonial.author}</div>
+                  <div className="font-bold text-foreground">{testimonial.author}</div>
                   <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                 </div>
               </div>

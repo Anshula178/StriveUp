@@ -1,7 +1,6 @@
 'use client';
 
 import { Section, Container } from '@/components/ui/layout';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Code, Smartphone, Palette, Database, Layout, Zap, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
@@ -50,7 +49,7 @@ export function Services() {
     <Section className="bg-background">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
             Our Expertise
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -58,7 +57,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -66,25 +65,29 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative p-8 rounded-[2rem] bg-card shadow-lg group overflow-hidden"
             >
-              <Link href={service.href} className="block h-full group">
-                <Card className="h-full bg-white/5 border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                      <service.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <CardTitle className="group-hover:text-primary transition-colors">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base mb-6">
-                      {service.description}
-                    </CardDescription>
-                    <div className="flex items-center text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
-                      Learn more <ArrowRight className="ml-2 w-4 h-4" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+              {/* Top Right Corner Accent */}
+              <div className="absolute top-0 right-0 w-20 h-20 border-t-[3px] border-r-[3px] border-primary rounded-tr-[1.5rem] transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:border-primary/50 group-hover:rounded-[2rem]" />
+              
+              {/* Bottom Left Corner Accent */}
+              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-[3px] border-l-[3px] border-primary rounded-bl-[1.5rem] transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:border-primary/50 group-hover:rounded-[2rem]" />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+                  <service.icon className="w-7 h-7" />
+                </div>
+                
+                <h3 className="font-heading text-xl font-bold text-foreground mb-3">{service.title}</h3>
+                
+                <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">
+                  {service.description}
+                </p>
+                
+                <Link href={service.href} className="inline-flex items-center gap-2 font-bold text-sm text-foreground hover:text-primary transition-colors mt-auto">
+                  Read More <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>

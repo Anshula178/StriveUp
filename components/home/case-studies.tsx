@@ -37,7 +37,7 @@ export function CaseStudies() {
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl space-y-4">
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
               Selected Work
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -61,7 +61,7 @@ export function CaseStudies() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-6 border border-white/10">
+              <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-6 border border-border">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -69,7 +69,7 @@ export function CaseStudies() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button variant="outline" className="bg-background/80 backdrop-blur-sm border-white/20 text-white">
+                  <Button variant="outline" className="bg-background/80 backdrop-blur-sm border-border text-foreground">
                     View Case Study
                   </Button>
                 </div>
@@ -78,7 +78,7 @@ export function CaseStudies() {
                 <div className="text-xs font-medium text-primary uppercase tracking-wider">
                   {project.category}
                 </div>
-                <h3 className="font-heading text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground line-clamp-2">

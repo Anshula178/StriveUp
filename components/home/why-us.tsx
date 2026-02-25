@@ -2,7 +2,8 @@
 
 import { Section, Container } from '@/components/ui/layout';
 import { motion } from 'motion/react';
-import { ShieldCheck, Zap, Users, BarChart3, Layers, Globe } from 'lucide-react';
+import { ShieldCheck, Zap, Users, BarChart3, Layers, Globe, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const reasons = [
   {
@@ -45,7 +46,7 @@ export function WhyUs() {
       
       <Container className="relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-white">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
             Why Partner with STRIVEUP?
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -61,15 +62,29 @@ export function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card/50 border border-white/5 p-8 rounded-2xl hover:bg-card hover:border-primary/20 transition-all duration-300 group"
+              className="relative p-8 rounded-[2rem] bg-card shadow-lg group overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <reason.icon className="w-6 h-6 text-primary" />
+              {/* Top Right Corner Accent */}
+              <div className="absolute top-0 right-0 w-20 h-20 border-t-[2px] border-r-[2px] border-primary rounded-tr-[1.5rem] transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:border-primary/50 group-hover:rounded-[2rem]" />
+              
+              {/* Bottom Left Corner Accent */}
+              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-[2px] border-l-[2px] border-primary rounded-bl-[1.5rem] transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:border-primary/50 group-hover:rounded-[2rem]" />
+
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+                  <reason.icon className="w-7 h-7" />
+                </div>
+                
+                <h3 className="font-heading text-xl font-bold text-foreground mb-3">{reason.title}</h3>
+                
+                <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">
+                  {reason.description}
+                </p>
+                
+                <Link href="#" className="inline-flex items-center gap-2 font-bold text-sm text-foreground hover:text-primary transition-colors mt-auto">
+                  Read More <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
-              <h3 className="font-heading text-xl font-bold text-white mb-3">{reason.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {reason.description}
-              </p>
             </motion.div>
           ))}
         </div>
