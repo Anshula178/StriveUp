@@ -46,8 +46,11 @@ const services = [
 
 export function Services() {
   return (
-    <Section className="bg-background">
-      <Container>
+    <Section className="bg-background relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none" />
+
+      <Container className="relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
             Our Expertise
@@ -68,10 +71,10 @@ export function Services() {
               className="relative p-8 rounded-[2rem] bg-card shadow-lg group overflow-hidden"
             >
               {/* Top Right Corner Accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 border-t-[3px] border-r-[3px] border-primary rounded-tr-[1.5rem] transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:border-primary/50 group-hover:rounded-[2rem]" />
+              <div className="absolute top-0 right-0 w-20 h-20 border-t-[2px] border-r-[2px] border-primary rounded-tr-[1.5rem] transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:border-primary/50 group-hover:rounded-[2rem]" />
               
               {/* Bottom Left Corner Accent */}
-              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-[3px] border-l-[3px] border-primary rounded-bl-[1.5rem] transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:border-primary/50 group-hover:rounded-[2rem]" />
+              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-[2px] border-l-[2px] border-primary rounded-bl-[1.5rem] transition-all duration-500 ease-out group-hover:w-full group-hover:h-full group-hover:border-primary/50 group-hover:rounded-[2rem]" />
 
               <div className="relative z-10 flex flex-col h-full">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
