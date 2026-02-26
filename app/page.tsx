@@ -7,6 +7,7 @@ import { WhyUs } from '@/components/home/why-us';
 import { TechStack } from '@/components/home/tech-stack';
 import { CaseStudies } from '@/components/home/case-studies';
 import { Testimonials } from '@/components/home/testimonials';
+import { FAQ } from '@/components/home/faq';
 import { CTA } from '@/components/home/cta';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Process />
       <CaseStudies />
       <Testimonials />
+      <FAQ />
       <CTA />
       <Footer />
     </main>

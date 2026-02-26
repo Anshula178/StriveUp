@@ -4,9 +4,8 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { MessageCircle, X, Send, Loader2, Sparkles, RefreshCw, Menu, ArrowRight } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, Sparkles, RefreshCw, Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { GoogleGenAI } from "@google/genai";
 
 interface Message {
   role: 'user' | 'model';
@@ -40,28 +39,16 @@ export function ChatWidget() {
     setIsLoading(true);
 
     try {
-      const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-      if (!apiKey) {
-        throw new Error('Gemini API key not found');
-      }
-
-      const ai = new GoogleGenAI({ apiKey });
-      
-      const historyMessages = messages.filter((_, index) => index > 0).map(m => ({
-        role: m.role,
-        parts: [{ text: m.content }]
-      }));
-
-      const chat = ai.chats.create({
-        model: "gemini-2.5-flash-latest",
-        history: historyMessages,
-        config: {
-          systemInstruction: "You are Strive AI, a helpful AI assistant for STRIVEUP, a web development agency. You are polite, professional, and knowledgeable about web development, design, and digital strategy.",
-        }
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: messageToSend, history: messages }),
       });
 
-      const result = await chat.sendMessage({ message: messageToSend });
-      const response = result.text || "I'm sorry, I couldn't generate a response.";
+      if (!res.ok) throw new Error('Chat request failed');
+
+      const data = await res.json();
+      const response = data.response || "I'm sorry, I couldn't generate a response.";
 
       setMessages(prev => [...prev, { role: 'model', content: response }]);
     } catch (error) {
