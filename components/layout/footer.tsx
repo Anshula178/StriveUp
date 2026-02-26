@@ -78,7 +78,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <a href="mailto:striveup.solutions@gmail.com" className="hover:text-foreground transition-colors">striveup.solutions@gmail.com</a>
+                <a href="mailto:hello@striveup.com" className="hover:text-foreground transition-colors">hello@striveup.com</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Phone className="h-5 w-5 text-primary shrink-0" />

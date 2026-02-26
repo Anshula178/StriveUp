@@ -14,7 +14,6 @@ const projects = [
     category: 'SaaS / UI/UX',
     image: 'https://picsum.photos/id/1/800/600',
     description: 'Complete overhaul of a financial analytics platform, resulting in a 40% increase in user engagement.',
-    href: '/work/fintech-dashboard',
   },
   {
     id: 2,
@@ -22,7 +21,6 @@ const projects = [
     category: 'Web Development',
     image: 'https://picsum.photos/id/2/800/600',
     description: 'Migrating a legacy store to a headless Shopify + Next.js architecture, boosting load speeds by 300%.',
-    href: '/work/ecommerce-scale-up',
   },
   {
     id: 3,
@@ -30,7 +28,6 @@ const projects = [
     category: 'Mobile App',
     image: 'https://picsum.photos/id/3/800/600',
     description: 'A HIPAA-compliant telemedicine app connecting patients with specialists in under 5 minutes.',
-    href: '/work/healthtech-mobile',
   },
 ];
 
@@ -64,32 +61,30 @@ export function CaseStudies() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group cursor-pointer"
             >
-              <Link href={project.href}>
-                <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-6 border border-border">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button variant="outline" className="bg-background/80 backdrop-blur-sm border-border text-foreground">
-                      View Case Study
-                    </Button>
-                  </div>
+              <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-6 border border-border">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Button variant="outline" className="bg-background/80 backdrop-blur-sm border-border text-foreground">
+                    View Case Study
+                  </Button>
                 </div>
-                <div className="space-y-2">
-                  <div className="text-xs font-medium text-primary uppercase tracking-wider">
-                    {project.category}
-                  </div>
-                  <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground line-clamp-2">
-                    {project.description}
-                  </p>
+              </div>
+              <div className="space-y-2">
+                <div className="text-xs font-medium text-primary uppercase tracking-wider">
+                  {project.category}
                 </div>
-              </Link>
+                <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground line-clamp-2">
+                  {project.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
