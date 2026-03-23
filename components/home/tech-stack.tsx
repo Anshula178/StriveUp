@@ -10,10 +10,10 @@ const technologies = [
 
 export function TechStack() {
   return (
-    <Section className="py-12 border-y border-border bg-secondary/20 overflow-hidden">
+    <Section className="py-12 border-y border-border bg-background overflow-hidden">
       <Container>
         <div className="text-center mb-8">
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
+          <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
             Powered by Modern Technologies
           </p>
         </div>
@@ -21,13 +21,13 @@ export function TechStack() {
         <div className="relative flex overflow-x-hidden group">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
             {technologies.map((tech) => (
-              <span key={tech} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-primary transition-colors cursor-default">
+              <span key={tech} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-accent transition-colors cursor-default">
                 {tech}
               </span>
             ))}
              {/* Duplicate for seamless loop */}
              {technologies.map((tech) => (
-              <span key={`${tech}-duplicate`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-primary transition-colors cursor-default">
+              <span key={`${tech}-duplicate`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-accent transition-colors cursor-default">
                 {tech}
               </span>
             ))}
@@ -35,13 +35,13 @@ export function TechStack() {
 
           <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-12 ml-12">
              {technologies.map((tech) => (
-              <span key={`${tech}-2`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-primary transition-colors cursor-default">
+              <span key={`${tech}-2`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-accent transition-colors cursor-default">
                 {tech}
               </span>
             ))}
              {/* Duplicate for seamless loop */}
              {technologies.map((tech) => (
-              <span key={`${tech}-duplicate-2`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-primary transition-colors cursor-default">
+              <span key={`${tech}-duplicate-2`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-accent transition-colors cursor-default">
                 {tech}
               </span>
             ))}

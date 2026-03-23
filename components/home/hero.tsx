@@ -58,12 +58,7 @@ export function Hero() {
 
       <Container className="relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 dark:bg-primary/10 border border-primary/20 text-sm text-primary backdrop-blur-sm shadow-[0_0_15px_rgba(0,102,255,0.1)] dark:shadow-[0_0_15px_rgba(0,102,255,0.2)]"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(0,102,255,0.8)]" />
-            Accepting New Projects for Q2 2026
-          </div>
+          
 
           <div className="perspective-1000">
             <h1

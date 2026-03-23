@@ -6,30 +6,7 @@ import { Section, Container } from '@/components/ui/layout';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-
-const posts = [
-  {
-    title: 'The Future of Web Development: Server Components Explained',
-    excerpt: 'Why React Server Components are changing the game for performance and SEO.',
-    date: 'Oct 12, 2025',
-    category: 'Technology',
-    slug: 'future-of-web-dev'
-  },
-  {
-    title: 'Scaling Your SaaS from 0 to 10k Users',
-    excerpt: 'Lessons learned from scaling high-traffic applications on AWS and Vercel.',
-    date: 'Sep 28, 2025',
-    category: 'Business',
-    slug: 'scaling-saas'
-  },
-  {
-    title: 'Why Design Systems Matter for Enterprise Growth',
-    excerpt: 'How a consistent design system can speed up development velocity by 50%.',
-    date: 'Sep 15, 2025',
-    category: 'Design',
-    slug: 'design-systems'
-  }
-];
+import { posts } from './data';
 
 export default function BlogPage() {
   return (
@@ -66,12 +43,12 @@ export default function BlogPage() {
                 className="preserve-3d"
               >
                 <Link href={`/blog/${post.slug}`} className="group block h-full">
-                  <Card className="h-full bg-card border-border hover:border-primary/50 transition-all duration-300 preserve-3d">
+                  <Card className="h-full bg-card border-border hover:border-accent/50 transition-all duration-300 preserve-3d">
                     <CardHeader className="preserve-3d">
-                      <div className="text-xs font-medium text-primary uppercase tracking-wider mb-2">
+                      <div className="text-xs font-medium text-accent uppercase tracking-wider mb-2">
                         {post.category}
                       </div>
-                      <CardTitle className="group-hover:text-primary transition-colors">
+                      <CardTitle className="group-hover:text-accent transition-colors">
                         {post.title}
                       </CardTitle>
                     </CardHeader>

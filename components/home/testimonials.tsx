@@ -27,35 +27,35 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <Section className="bg-secondary/10 border-t border-border">
+    <Section className="bg-background py-24">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             Trusted by Industry Leaders
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card border border-border p-8 rounded-2xl relative"
+              className="bg-card border border-border p-8 rounded-2xl relative shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
             >
-              <Quote className="absolute top-6 left-6 w-8 h-8 text-primary/20" />
-              <p className="text-muted-foreground text-lg italic mb-6 relative z-10 pt-8">
+              <Quote className="absolute top-6 left-6 w-8 h-8 text-accent/20" />
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8 relative z-10 pt-8 flex-grow">
                 &quot;{testimonial.quote}&quot;
               </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-accent font-bold">
                   {testimonial.author[0]}
                 </div>
                 <div>
-                  <div className="font-bold text-foreground">{testimonial.author}</div>
-                  <div className="text-xs text-muted-foreground">{testimonial.role}</div>
+                  <div className="font-bold text-foreground tracking-tight">{testimonial.author}</div>
+                  <div className="text-xs font-medium text-muted-foreground">{testimonial.role}</div>
                 </div>
               </div>
             </motion.div>

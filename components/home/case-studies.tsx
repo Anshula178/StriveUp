@@ -33,11 +33,11 @@ const projects = [
 
 export function CaseStudies() {
   return (
-    <Section className="bg-background">
+    <Section className="bg-background py-24">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl space-y-4">
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground tracking-tight">
               Selected Work
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -59,29 +59,29 @@ export function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer flex flex-col"
             >
-              <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-6 border border-border">
+              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-6 border border-border shadow-sm group-hover:shadow-md transition-all duration-300">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button variant="outline" className="bg-background/80 backdrop-blur-sm border-border text-foreground">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                  <Button variant="secondary" className="bg-background/90 text-foreground hover:bg-background">
                     View Case Study
                   </Button>
                 </div>
               </div>
-              <div className="space-y-2">
-                <div className="text-xs font-medium text-primary uppercase tracking-wider">
+              <div className="space-y-3 flex-grow">
+                <div className="text-xs font-bold text-accent uppercase tracking-widest">
                   {project.category}
                 </div>
-                <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="font-heading text-2xl font-bold text-foreground group-hover:text-accent transition-colors tracking-tight">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground line-clamp-2">
+                <p className="text-muted-foreground leading-relaxed">
                   {project.description}
                 </p>
               </div>

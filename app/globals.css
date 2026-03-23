@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-sans: var(--font-sans);
@@ -17,73 +21,86 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
 :root {
-  /* Light Mode Defaults */
-  --background: #FFFFFF;
-  --foreground: #0F172A;
+  /* Light Mode - Refined SaaS Palette */
+  --background: #FAFAFA;
+  --foreground: #09090B;
 
-  /* Brand Blue */
-  --primary: #0066ff;
-  --primary-foreground: #FFFFFF;
+  /* Primary actions (High contrast) */
+  --primary: #09090B;
+  --primary-foreground: #FAFAFA;
 
   /* Secondary actions */
-  --secondary: #F1F5F9;
-  --secondary-foreground: #0F172A;
+  --secondary: #F4F4F5;
+  --secondary-foreground: #18181B;
 
-  /* Subtle highlights */
-  --accent: #E0F2FE;
-  --accent-foreground: #0066ff;
+  /* Brand Accent (Blue 600 - WCAG AA compliant on FAFAFA) */
+  --accent: #2563EB;
+  --accent-foreground: #FFFFFF;
 
-  /* Muted text */
-  --muted: #F1F5F9;
-  --muted-foreground: #64748B;
+  /* Muted text (Zinc 500 - WCAG AA compliant on FAFAFA) */
+  --muted: #F4F4F5;
+  --muted-foreground: #71717A;
 
-  /* Cards */
+  /* Surfaces */
   --card: #FFFFFF;
-  --card-foreground: #0F172A;
+  --card-foreground: #09090B;
 
-  /* Borders */
-  --border: #E2E8F0;
+  /* Borders & Inputs */
+  --border: #E4E4E7;
+  --input: #E4E4E7;
+  --ring: #09090B;
+  
+  --radius: 0.75rem;
 }
 
 .dark {
-  /* Deep tech blue / near-black */
-  --background: #0B1120; 
-  --foreground: #F8FAFC;
+  /* Dark Mode - Deep SaaS Palette */
+  --background: #09090B; 
+  --foreground: #FAFAFA;
 
-  /* Brand Blue */
-  --primary: #0066ff;
-  --primary-foreground: #FFFFFF;
+  /* Primary actions */
+  --primary: #FAFAFA;
+  --primary-foreground: #09090B;
 
-  /* Darker Blue for Secondary actions */
-  --secondary: #1E293B;
-  --secondary-foreground: #F8FAFC;
+  /* Secondary actions */
+  --secondary: #27272A;
+  --secondary-foreground: #FAFAFA;
 
-  /* Subtle highlights */
-  --accent: #1E293B;
-  --accent-foreground: #0066ff;
+  /* Brand Accent (Blue 500 - WCAG AA compliant on 09090B) */
+  --accent: #3B82F6;
+  --accent-foreground: #FFFFFF;
 
-  /* Muted text */
-  --muted: #1E293B;
-  --muted-foreground: #94A3B8;
+  /* Muted text (Zinc 400 - WCAG AA compliant on 09090B) */
+  --muted: #27272A;
+  --muted-foreground: #A1A1AA;
 
-  /* Cards */
-  --card: #111827;
-  --card-foreground: #F8FAFC;
+  /* Surfaces */
+  --card: #18181B;
+  --card-foreground: #FAFAFA;
 
-  /* Borders */
-  --border: #1F2937;
+  /* Borders & Inputs */
+  --border: #27272A;
+  --input: #27272A;
+  --ring: #FAFAFA;
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-}
-
-::selection {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-accent/20 selection:text-accent;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
 }

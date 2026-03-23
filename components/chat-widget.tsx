@@ -91,7 +91,7 @@ export function ChatWidget() {
             <Card className="border-0 h-[600px] flex flex-col bg-background shadow-none rounded-[2rem]">
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-                <div className="flex items-center gap-2 text-primary font-bold text-xl">
+                <div className="flex items-center gap-2 text-accent font-bold text-xl">
                   <Sparkles className="w-6 h-6" />
                   <span>STRIVEUP</span>
                 </div>
@@ -115,7 +115,7 @@ export function ChatWidget() {
                     <div
                       className={`max-w-[85%] text-base leading-relaxed ${
                         msg.role === 'user'
-                          ? 'bg-primary text-primary-foreground rounded-2xl rounded-br-none px-5 py-3'
+                          ? 'bg-accent text-accent-foreground rounded-2xl rounded-br-none px-5 py-3'
                           : 'text-foreground'
                       }`}
                     >
@@ -131,9 +131,9 @@ export function ChatWidget() {
                 {isLoading && (
                   <div className="flex justify-start">
                     <div className="flex items-center gap-1 px-2">
-                      <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce [animation-delay:-0.3s]" />
-                      <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce [animation-delay:-0.15s]" />
-                      <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce" />
+                      <span className="w-1.5 h-1.5 bg-accent/40 rounded-full animate-bounce [animation-delay:-0.3s]" />
+                      <span className="w-1.5 h-1.5 bg-accent/40 rounded-full animate-bounce [animation-delay:-0.15s]" />
+                      <span className="w-1.5 h-1.5 bg-accent/40 rounded-full animate-bounce" />
                     </div>
                   </div>
                 )}
@@ -157,7 +157,7 @@ export function ChatWidget() {
                         <Button
                           key={action}
                           variant="ghost"
-                          className="w-full justify-start text-left h-auto py-3 px-4 rounded-xl hover:bg-primary/10 hover:text-primary"
+                          className="w-full justify-start text-left h-auto py-3 px-4 rounded-xl hover:bg-accent/10 hover:text-accent"
                           onClick={() => handleSend(action)}
                         >
                           {action}
@@ -175,13 +175,13 @@ export function ChatWidget() {
                     e.preventDefault();
                     handleSend();
                   }}
-                  className="flex items-center gap-2 bg-muted/30 rounded-full px-2 py-1 border border-border/50 focus-within:border-primary/50 transition-colors"
+                  className="flex items-center gap-2 bg-muted/30 rounded-full px-2 py-1 border border-border/50 focus-within:border-accent/50 transition-colors"
                 >
                   <Button 
                     type="button"
                     variant="ghost" 
                     size="icon" 
-                    className={`rounded-full text-muted-foreground hover:text-primary transition-colors ${showMenu ? 'text-primary bg-primary/10' : ''}`}
+                    className={`rounded-full text-muted-foreground hover:text-accent transition-colors ${showMenu ? 'text-accent bg-accent/10' : ''}`}
                     onClick={() => setShowMenu(!showMenu)}
                   >
                     <Menu className="w-5 h-5" />
@@ -199,7 +199,7 @@ export function ChatWidget() {
                     type="submit" 
                     size="icon" 
                     variant="ghost"
-                    className="rounded-full text-muted-foreground hover:text-primary"
+                    className="rounded-full text-muted-foreground hover:text-accent"
                     disabled={isLoading || !input.trim()}
                   >
                     {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
@@ -215,8 +215,8 @@ export function ChatWidget() {
         size="lg"
         className={`h-16 w-16 rounded-full shadow-2xl transition-all duration-500 hover:scale-105 ${
           isOpen 
-            ? 'bg-primary hover:bg-primary/90 text-primary-foreground rotate-90' 
-            : 'bg-card hover:bg-card/90 text-primary -rotate-0'
+            ? 'bg-card hover:bg-card/90 text-foreground rotate-90' 
+            : 'bg-accent hover:bg-accent/90 text-accent-foreground -rotate-0'
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -239,7 +239,7 @@ export function ChatWidget() {
               className="relative"
             >
               <MessageCircle className="w-8 h-8 fill-current" />
-              <Sparkles className="w-4 h-4 absolute -top-1 -right-1 fill-current text-primary animate-pulse" />
+              <Sparkles className="w-4 h-4 absolute -top-1 -right-1 fill-current text-accent animate-pulse" />
             </motion.div>
           )}
         </AnimatePresence>

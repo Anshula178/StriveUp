@@ -22,7 +22,7 @@ export default function ContactPage() {
               className="space-y-8 preserve-3d"
             >
               <h1 className="font-heading text-4xl md:text-6xl font-bold text-foreground">
-                Let&apos;s Build Something <span className="text-primary">Extraordinary</span>.
+                Let&apos;s Build Something <span className="text-accent">Extraordinary</span>.
               </h1>
               <p className="text-xl text-muted-foreground">
                 Ready to scale? Schedule a free strategy call or drop us a message. We usually respond within 2 hours.
@@ -35,7 +35,7 @@ export default function ContactPage() {
                   { icon: MapPin, label: "Visit Us", value: "123 Tech District, Innovation City" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
                       <item.icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -58,22 +58,22 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground">First Name</label>
-                    <input type="text" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="John" />
+                    <input type="text" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="John" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground">Last Name</label>
-                    <input type="text" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Doe" />
+                    <input type="text" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="Doe" />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Email Address</label>
-                  <input type="email" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="john@company.com" />
+                  <input type="email" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors" placeholder="john@company.com" />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Project Type</label>
-                  <select className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+                  <select className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors">
                     <option>Web Development</option>
                     <option>Mobile App</option>
                     <option>Custom Software</option>
@@ -84,7 +84,7 @@ export default function ContactPage() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Message</label>
-                  <textarea className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors min-h-[120px]" placeholder="Tell us about your project..." />
+                  <textarea className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors min-h-[120px]" placeholder="Tell us about your project..." />
                 </div>
 
                 <Button size="lg" className="w-full text-lg">
