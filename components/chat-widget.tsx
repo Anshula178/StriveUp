@@ -4,9 +4,8 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { MessageCircle, X, Send, Loader2, Sparkles, RefreshCw, Menu, ArrowRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { GoogleGenAI } from "@google/genai";
+import { MessageCircle, X, Send, Loader2, Sparkles, RefreshCw, Menu } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Message {
   role: 'user' | 'model';
@@ -26,7 +25,10 @@ export function ChatWidget() {
   // Auto-scroll to bottom of chat
   React.useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      scrollRef.current.scrollTo({
+        top: scrollRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
     }
   }, [messages, isOpen]);
 
@@ -40,28 +42,16 @@ export function ChatWidget() {
     setIsLoading(true);
 
     try {
-      const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-      if (!apiKey) {
-        throw new Error('Gemini API key not found');
-      }
-
-      const ai = new GoogleGenAI({ apiKey });
-      
-      const historyMessages = messages.filter((_, index) => index > 0).map(m => ({
-        role: m.role,
-        parts: [{ text: m.content }]
-      }));
-
-      const chat = ai.chats.create({
-        model: "gemini-2.5-flash-latest",
-        history: historyMessages,
-        config: {
-          systemInstruction: "You are Strive AI, a helpful AI assistant for STRIVEUP, a web development agency. You are polite, professional, and knowledgeable about web development, design, and digital strategy.",
-        }
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: messageToSend, history: messages }),
       });
 
-      const result = await chat.sendMessage({ message: messageToSend });
-      const response = result.text || "I'm sorry, I couldn't generate a response.";
+      if (!res.ok) throw new Error('Chat request failed');
+
+      const data = await res.json();
+      const response = data.response || "I'm sorry, I couldn't generate a response.";
 
       setMessages(prev => [...prev, { role: 'model', content: response }]);
     } catch (error) {
@@ -78,7 +68,7 @@ export function ChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end font-sans">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -86,12 +76,12 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="mb-6 w-[380px] shadow-2xl rounded-[2rem] overflow-hidden"
+            className="mb-4 sm:mb-6 w-[calc(100vw-2rem)] sm:w-[380px] shadow-2xl rounded-[2rem] overflow-hidden"
           >
-            <Card className="border-0 h-[600px] flex flex-col bg-background shadow-none rounded-[2rem]">
+            <Card className="border-0 h-[500px] sm:h-[600px] max-h-[80vh] flex flex-col bg-background shadow-none rounded-[2rem]">
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-                <div className="flex items-center gap-2 text-accent font-bold text-xl">
+                <div className="flex items-center gap-2 text-primary font-bold text-xl">
                   <Sparkles className="w-6 h-6" />
                   <span>STRIVEUP</span>
                 </div>
@@ -115,7 +105,7 @@ export function ChatWidget() {
                     <div
                       className={`max-w-[85%] text-base leading-relaxed ${
                         msg.role === 'user'
-                          ? 'bg-accent text-accent-foreground rounded-2xl rounded-br-none px-5 py-3'
+                          ? 'bg-primary text-primary-foreground rounded-2xl rounded-br-none px-5 py-3'
                           : 'text-foreground'
                       }`}
                     >
@@ -131,9 +121,9 @@ export function ChatWidget() {
                 {isLoading && (
                   <div className="flex justify-start">
                     <div className="flex items-center gap-1 px-2">
-                      <span className="w-1.5 h-1.5 bg-accent/40 rounded-full animate-bounce [animation-delay:-0.3s]" />
-                      <span className="w-1.5 h-1.5 bg-accent/40 rounded-full animate-bounce [animation-delay:-0.15s]" />
-                      <span className="w-1.5 h-1.5 bg-accent/40 rounded-full animate-bounce" />
+                      <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce [animation-delay:-0.3s]" />
+                      <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce [animation-delay:-0.15s]" />
+                      <span className="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce" />
                     </div>
                   </div>
                 )}
@@ -157,7 +147,7 @@ export function ChatWidget() {
                         <Button
                           key={action}
                           variant="ghost"
-                          className="w-full justify-start text-left h-auto py-3 px-4 rounded-xl hover:bg-accent/10 hover:text-accent"
+                          className="w-full justify-start text-left h-auto py-3 px-4 rounded-xl hover:bg-primary/10 hover:text-primary"
                           onClick={() => handleSend(action)}
                         >
                           {action}
@@ -175,13 +165,13 @@ export function ChatWidget() {
                     e.preventDefault();
                     handleSend();
                   }}
-                  className="flex items-center gap-2 bg-muted/30 rounded-full px-2 py-1 border border-border/50 focus-within:border-accent/50 transition-colors"
+                  className="flex items-center gap-2 bg-muted/30 rounded-full px-2 py-1 border border-border/50 focus-within:border-primary/50 transition-colors"
                 >
                   <Button 
                     type="button"
                     variant="ghost" 
                     size="icon" 
-                    className={`rounded-full text-muted-foreground hover:text-accent transition-colors ${showMenu ? 'text-accent bg-accent/10' : ''}`}
+                    className={`rounded-full text-muted-foreground hover:text-primary transition-colors ${showMenu ? 'text-primary bg-primary/10' : ''}`}
                     onClick={() => setShowMenu(!showMenu)}
                   >
                     <Menu className="w-5 h-5" />
@@ -199,7 +189,7 @@ export function ChatWidget() {
                     type="submit" 
                     size="icon" 
                     variant="ghost"
-                    className="rounded-full text-muted-foreground hover:text-accent"
+                    className="rounded-full text-muted-foreground hover:text-primary"
                     disabled={isLoading || !input.trim()}
                   >
                     {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
@@ -215,8 +205,8 @@ export function ChatWidget() {
         size="lg"
         className={`h-16 w-16 rounded-full shadow-2xl transition-all duration-500 hover:scale-105 ${
           isOpen 
-            ? 'bg-card hover:bg-card/90 text-foreground rotate-90' 
-            : 'bg-accent hover:bg-accent/90 text-accent-foreground -rotate-0'
+            ? 'bg-primary hover:bg-primary/90 text-primary-foreground rotate-90' 
+            : 'bg-card hover:bg-card/90 text-primary -rotate-0'
         }`}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -239,7 +229,7 @@ export function ChatWidget() {
               className="relative"
             >
               <MessageCircle className="w-8 h-8 fill-current" />
-              <Sparkles className="w-4 h-4 absolute -top-1 -right-1 fill-current text-accent animate-pulse" />
+              <Sparkles className="w-4 h-4 absolute -top-1 -right-1 fill-current text-primary animate-pulse" />
             </motion.div>
           )}
         </AnimatePresence>

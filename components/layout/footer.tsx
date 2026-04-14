@@ -83,7 +83,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground font-medium">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
-                <a href="mailto:hello@striveup.com" className="hover:text-foreground transition-colors">hello@striveup.com</a>
+                <a href="mailto:striveup.solutions@gmail.com" className="hover:text-foreground transition-colors">striveup.solutions@gmail.com</a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground font-medium">
                 <Phone className="h-5 w-5 text-accent shrink-0" />

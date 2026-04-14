@@ -13,7 +13,7 @@ export function CTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
 
       <Container className="relative z-10">
-        <div className="bg-card border border-border rounded-[2.5rem] p-10 md:p-20 text-center max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
+        <div className="bg-card border border-border rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-20 text-center max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
           {/* Subtle inner grid */}
           <div 
             className="absolute inset-0 opacity-[0.03] pointer-events-none"

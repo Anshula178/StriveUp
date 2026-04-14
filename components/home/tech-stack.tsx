@@ -1,70 +1,72 @@
 'use client';
 
 import { Section, Container } from '@/components/ui/layout';
-import { motion } from 'motion/react';
 
 const technologies = [
-  'Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS',
-  'GraphQL', 'AWS', 'Docker', 'Kubernetes', 'Figma', 'Prisma', 'Vercel', 'Stripe'
+  { name: 'Next.js', slug: 'nextdotjs' },
+  { name: 'React', slug: 'react' },
+  { name: 'TypeScript', slug: 'typescript' },
+  { name: 'Node.js', slug: 'nodedotjs' },
+  { name: 'PostgreSQL', slug: 'postgresql' },
+  { name: 'Tailwind CSS', slug: 'tailwindcss' },
+  { name: 'GraphQL', slug: 'graphql' },
+  { name: 'Webflow', slug: 'webflow' },    // Added
+  { name: 'WordPress', slug: 'wordpress' }, // Added
+ 
+  { name: 'Docker', slug: 'docker' },
+  { name: 'Kubernetes', slug: 'kubernetes' },
+  { name: 'Figma', slug: 'figma' },
+  { name: 'Prisma', slug: 'prisma' },
+  { name: 'Vercel', slug: 'vercel' },
+  { name: 'Stripe', slug: 'stripe' }
 ];
 
 export function TechStack() {
   return (
-    <Section className="py-12 border-y border-border bg-background overflow-hidden">
+    <Section className="py-20  bg-background overflow-hidden">
       <Container>
-        <div className="text-center mb-8">
-          <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
+        <div className="text-center mb-16">
+          <p className="text-xs font-bold text-muted-foreground uppercase tracking-[0.3em]">
             Powered by Modern Technologies
           </p>
         </div>
         
-        <div className="relative flex overflow-x-hidden group">
-          <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
-            {technologies.map((tech) => (
-              <span key={tech} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-accent transition-colors cursor-default">
-                {tech}
-              </span>
+        <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+          
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-10 md:gap-20 py-4 w-max hover:[animation-play-state:paused]">
+            {technologies.map((tech, i) => (
+              <div key={`${tech.slug}-${i}`} className="flex flex-col items-center justify-center gap-4 group shrink-0">
+                <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
+                  <img 
+                    src={`https://cdn.simpleicons.org/${tech.slug}`} 
+                    alt={tech.name}
+                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <span className="text-[10px] md:text-xs font-bold text-muted-foreground/60 group-hover:text-foreground transition-colors uppercase tracking-widest text-center">
+                  {tech.name}
+                </span>
+              </div>
             ))}
-             {/* Duplicate for seamless loop */}
-             {technologies.map((tech) => (
-              <span key={`${tech}-duplicate`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-accent transition-colors cursor-default">
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-12 ml-12">
-             {technologies.map((tech) => (
-              <span key={`${tech}-2`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-accent transition-colors cursor-default">
-                {tech}
-              </span>
-            ))}
-             {/* Duplicate for seamless loop */}
-             {technologies.map((tech) => (
-              <span key={`${tech}-duplicate-2`} className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/30 hover:text-accent transition-colors cursor-default">
-                {tech}
-              </span>
+            
+            {/* Duplicate for seamless loop */}
+            {technologies.map((tech, i) => (
+              <div key={`${tech.slug}-dup-${i}`} className="flex flex-col items-center justify-center gap-4 group shrink-0">
+                <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
+                  <img 
+                    src={`https://cdn.simpleicons.org/${tech.slug}`} 
+                    alt={tech.name}
+                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <span className="text-[10px] md:text-xs font-bold text-muted-foreground/60 group-hover:text-foreground transition-colors uppercase tracking-widest text-center">
+                  {tech.name}
+                </span>
+              </div>
             ))}
           </div>
         </div>
       </Container>
-      
-      <style jsx global>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
-        }
-        @keyframes marquee2 {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(0); }
-        }
-        .animate-marquee {
-          animation: marquee 25s linear infinite;
-        }
-        .animate-marquee2 {
-          animation: marquee2 25s linear infinite;
-        }
-      `}</style>
     </Section>
   );
 }

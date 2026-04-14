@@ -68,7 +68,7 @@ export function FullScreenMenu({ isOpen, onClose, showCloseButton = true }: Full
         >
           {/* Close Button */}
           {showCloseButton && (
-            <div className="absolute top-6 right-6 z-50">
+            <div className="absolute top-4 right-4 md:top-6 md:right-6 z-50">
               <button
                 onClick={onClose}
                 className="p-2 rounded-full hover:bg-secondary transition-colors group"

@@ -36,7 +36,7 @@ export function Navbar() {
     <>
       {/* Full Navbar (Visible at top) */}
       <motion.header
-        className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md border-b border-border"
+        className="fixed top-0 left-0 right-0 z-40 bg-background/90 backdrop-blur-md "
         initial={{ y: 0 }}
         animate={{ y: isScrolled ? -100 : 0 }}
         transition={{ duration: 0.1, ease: 'linear' }}
